@@ -7,7 +7,7 @@ along with some quantities (i.e. 3, 6, 11).  Display these grocery items as HTML
 The output of this assignment will be grocery.ts and groceries.html displaying the output.
 */
 
-interface GroceryItem {
+interface GrocerySchema {
   name: string;
   quantity: number;
   price: string;
@@ -16,16 +16,16 @@ class Grocery {
   name: string;
   quantity: number;
   price: string;
-  constructor(paramaters: GroceryItem) {
+  constructor(paramaters: GrocerySchema) {
     for (const param in paramaters) {
       this[param] = paramaters[param]
     }
   }
 }
 
-const milk = new Grocery({ name: 'milk', quantity: 12, price:'$3.00' })
-const eggs = new Grocery({ name: 'eggs', quantity: 12, price:'$2.00' })
-const bread = new Grocery({ name: 'bread', quantity: 12, price:'$1.50' })
+const milk: Grocery = new Grocery({ name: 'milk', quantity: 12, price:'$3.00' })
+const eggs: Grocery = new Grocery({ name: 'eggs', quantity: 12, price:'$2.00' })
+const bread: Grocery = new Grocery({ name: 'bread', quantity: 12, price:'$1.50' })
 const groceries: Grocery[] = [ milk, eggs, bread ]
 
 const container: any = document.querySelector('body > .groceries > .container')
